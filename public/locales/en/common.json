@@ -1,0 +1,27 @@
+{
+  "social": {
+    "socials": "socials",
+    "addSocial": "Add Social",
+    "twitter": "twitter",
+    "facebook": "facebook",
+    "instagram": "instagram",
+    "youtube": "youtube",
+    "linkedin": "linkedin",
+    "pinterest": "pinterest",
+    "google": "google",
+    "tumblr": "tumblr",
+    "telegram": "Telegram",
+    "website": "website",
+    "link": "Link",
+    "edit": "edit",
+    "delete": "delete",
+    "editSocial": "Edit Social",
+    "type": "type",
+    "cancel": "cancel",
+    "age": "age",
+    "min": "The Link must be at least 16 characters",
+    "max": "The Link must be at most 40 characters",
+    "linkReq": "The Link is required",
+    "valLink": "The Link must be a valid URL"
+  }
+}
