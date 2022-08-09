@@ -94,13 +94,6 @@ export default function AddAccordion() {
   );
   const [type, setType] = useState<string>("");
   const [open, setOpen] = useState(false);
-  //   const matches1110 = useMediaQuery("(max-width:1110px)");
-  //   const matches666 = useMediaQuery("(max-width:666px)");
-
-  // const handleChangeSelect = (event: SelectChangeEvent<typeof type>) => {
-  //   // console.log(event.target.name);
-  //   setType(event.target.value);
-  // };
 
   const handleClose = () => {
     setOpen(false);
@@ -160,7 +153,6 @@ export default function AddAccordion() {
     borderTop: "1px solid rgba(0, 0, 0, .125)",
   }));
 
-  //   const [expanded, setExpanded] = useState<string>();
   const [acorOpen, setAcorOpen] = useState<boolean>(true);
 
   const ValidationTextField = styled(TextField)({
@@ -183,11 +175,7 @@ export default function AddAccordion() {
 
   return (
     <Accordion expanded={acorOpen} key="panel1">
-      <AccordionSummary
-        aria-controls="panel2d-content"
-        id="panel2d-header"
-        // onClick={handleChangeAcordion}
-      >
+      <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
         <Grid
           item
           xs={12}
@@ -239,9 +227,6 @@ export default function AddAccordion() {
             console.log(values);
             setType(values.type);
           }}
-          // validator={(values) => {}}
-          // validateOnBlur={false}
-          // validateOnChange={false}
           validationSchema={validationSchema}
         >
           {(props: {
@@ -347,8 +332,6 @@ export default function AddAccordion() {
                               InputLabelProps={{
                                 shrink: true,
                               }}
-                              // autoFocus={false}
-                              // autoFocus
                             />
                           </Grid>
                           <Grid
@@ -559,22 +542,6 @@ export default function AddAccordion() {
                     </Grid>
                   </FormControl>
                 </Grid>
-                {/* <Button
-                  type="submit"
-                  variant="contained"
-                  style={{
-                    fontSize: "10px",
-                    width: "100%",
-                    backgroundColor: theme.palette.primary.main,
-                    color:
-                      themeMode === "dark"
-                        ? theme.palette.text.primary
-                        : "white",
-                  }}
-                >
-                  {capitalizeFirstLetter(t("social.addSocial"))}
-                  {t("social.twitter")}
-                </Button> */}
               </Box>
             );
           }}

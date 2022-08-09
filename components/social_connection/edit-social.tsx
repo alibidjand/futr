@@ -1,7 +1,7 @@
 import * as yup from "yup";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import { styled, ThemeProvider } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { Formik } from "formik";
@@ -9,24 +9,15 @@ import {
   createTheme,
   FormControl,
   InputLabel,
-  //   MenuItem,
-  Paper,
   Select,
   SelectChangeEvent,
-  useEventCallback,
   useMediaQuery,
   Typography,
   ListItemIcon,
   ListItemText,
   OutlinedInput,
 } from "@mui/material";
-import {
-  MouseEvent,
-  MouseEventHandler,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { MouseEvent, useEffect, useMemo, useState } from "react";
 import MuiMenuItem from "@mui/material/MenuItem";
 import Twitter from "@mui/icons-material/Twitter";
 import Facebook from "@mui/icons-material/Facebook";
@@ -147,17 +138,8 @@ export default function EditAccordion() {
   const matches666 = useMediaQuery("(max-width:666px)");
 
   const handleChangeSelect = (event: SelectChangeEvent<typeof type>) => {
-    // console.log(event.target.name);
     setType(event.target.value);
   };
-
-  // const handleClose = () => {
-  //   setOpen(false);
-  // };
-
-  // const handleOpen = () => {
-  //   setOpen(true);
-  // };
 
   const handleChangeAcordion = (event: MouseEvent) => {
     const target = event.target as HTMLInputElement;
@@ -238,7 +220,6 @@ export default function EditAccordion() {
     borderTop: "1px solid rgba(0, 0, 0, .125)",
   }));
 
-  //   const [expanded, setExpanded] = useState<string>();
   const [expanded, setExpanded] = useState<string>();
 
   const ValidationTextField = styled(TextField)({
@@ -267,11 +248,6 @@ export default function EditAccordion() {
               <Accordion
                 expanded={expanded! === socialData.id.toString()}
                 key={socialData.id}
-                sx={
-                  {
-                    // my: socialDataArray.length > 1 ? "1rem" : "0",
-                  }
-                }
               >
                 <AccordionSummary
                   aria-controls={`${socialData.id}-content`}
@@ -296,7 +272,6 @@ export default function EditAccordion() {
                       rowGap: theme.spacing(1),
                     }}
                   >
-                    {/* direction === "rtl" ? "row-reverse" : "row", */}
                     <Grid
                       item
                       xs={12}
@@ -569,17 +544,8 @@ export default function EditAccordion() {
                             mx: 4,
                             display: "flex",
                             flexDirection: "column",
-
-                            // alignItems: "flex-start",
                           }}
                         >
-                          {/* <Box
-                         component="form"
-                         noValidate
-                         onSubmit={handleSubmit}
-                         sx={{ mt: 1 }}
-                         width="100%"
-                       > */}
                           <Grid
                             item
                             xs={12}
@@ -601,19 +567,7 @@ export default function EditAccordion() {
                             </Typography>
                           </Grid>
                           <Grid item xs={12} sm={12} md={12} lg={12} sx={{}}>
-                            <FormControl
-                              fullWidth
-                              sx={
-                                {
-                                  //   width: "100%",
-                                  //   display: "flex",
-                                  //   //   alignItems: "center",
-                                  //   flexDirection: "column",
-                                  //   justifyContent: "flex-start",
-                                  //   columnGap: "20px",
-                                }
-                              }
-                            >
+                            <FormControl fullWidth>
                               <Grid
                                 item
                                 xs={12}
@@ -934,7 +888,6 @@ export default function EditAccordion() {
                               </Grid>
                             </FormControl>
                           </Grid>
-                          {/* </Box> */}
                         </Box>
                       );
                     }}
