@@ -1,7 +1,7 @@
-import { PaletteMode, Direction } from "@mui/material";
+import { PaletteMode } from "@mui/material";
 import { blue, deepOrange, grey, pink, red } from "@mui/material/colors";
 
-export const getDesignTokens = (mode: PaletteMode, direction: Direction) => ({
+export const getDesignTokens = (mode: PaletteMode) => ({
   palette: {
     mode,
     ...(mode === "light"
@@ -20,16 +20,12 @@ export const getDesignTokens = (mode: PaletteMode, direction: Direction) => ({
             light: red[300],
           },
           divider: grey[400],
-          background: {
-            // default: white[900],
-            // paper: grey[900],
-          },
+          background: {},
           text: {
             primary: grey[800],
             secondary: grey[500],
             disabled: grey[500],
           },
-          direction,
         }
       : {
           // palette values for dark mode
@@ -54,7 +50,6 @@ export const getDesignTokens = (mode: PaletteMode, direction: Direction) => ({
             primary: "#ffffff",
             secondary: grey[300],
           },
-          direction,
         }),
   },
 });

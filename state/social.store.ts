@@ -1,15 +1,26 @@
 import create from "zustand";
 
-interface SocialStore {
-  themMode: "dark" | "light";
-  setThemeMode: (mode: "dark" | "light") => void;
-  addAccordion: boolean;
-  setAddAccordion: (addAccordion: boolean) => void;
-  addNewSocial: boolean;
-  setAddNewSocial: (addNewSocial: boolean) => void;
+export interface InitialFormData {
+  conversationDownloadsEnabled: boolean;
+  conversationClearEnabled: boolean;
+  collectUserInfoEnabled: boolean;
+  showLiveChatIcon: boolean;
+  conversationTranscripts: {
+    emailEnabled: boolean;
+    emailAddress: string;
+    emailFrequency: string;
+  };
+  initMessage: boolean;
 }
 
-export const useSocialStore = create<SocialStore>((set, get) => ({
+interface FurtStore {
+  themMode: "dark" | "light";
+  setThemeMode: (mode: "dark" | "light") => void;
+  initialFormData: InitialFormData;
+  setInitialFormData: (addInitialFormData: InitialFormData) => void;
+}
+
+export const useFurtStore = create<FurtStore>((set, get) => ({
   themMode: "light",
   setThemeMode: (mode: "dark" | "light") => {
     set((state) => ({
@@ -17,18 +28,22 @@ export const useSocialStore = create<SocialStore>((set, get) => ({
       themMode: mode,
     }));
   },
-  addAccordion: false,
-  setAddAccordion: (addAccordion: boolean) => {
-    set((state) => ({
-      ...state,
-      addAccordion,
-    }));
+  initialFormData: {
+    conversationDownloadsEnabled: false,
+    conversationClearEnabled: false,
+    collectUserInfoEnabled: false,
+    showLiveChatIcon: false,
+    conversationTranscripts: {
+      emailEnabled: false,
+      emailAddress: "ali.bidjandy@gmail.com",
+      emailFrequency: "DAILY",
+    },
+    initMessage: false,
   },
-  addNewSocial: false,
-  setAddNewSocial: (addNewSocial: boolean) => {
+  setInitialFormData: (addInitialFormData: InitialFormData) => {
     set((state) => ({
       ...state,
-      addNewSocial,
+      initialFormData: addInitialFormData,
     }));
   },
 }));

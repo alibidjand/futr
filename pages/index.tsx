@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
-import Social_Component from "../components/social_connection";
+import Social_Component from "../components/futr_form";
 import styles from "../styles/Home.module.css";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Home: NextPage = () => {
   return (
@@ -12,12 +11,5 @@ const Home: NextPage = () => {
     </div>
   );
 };
-export async function getStaticProps({ locale }: { locale: any }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
-  };
-}
 
 export default Home;
